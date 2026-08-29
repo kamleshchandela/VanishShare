@@ -4,6 +4,7 @@ import CountdownTimer from "../components/CountdownTimer";
 import Loader from "../components/Loader";
 import TransparentImage from "../components/TransparentImage";
 import toast from "react-hot-toast";
+import purpleMascot from "../assets/purple_mascot.jpg";
 import { Copy, ArrowLeft, RefreshCw, Flame, Check, AlertCircle } from "lucide-react";
 
 export default function CreateText({ navigate }) {
@@ -205,7 +206,7 @@ export default function CreateText({ navigate }) {
         <div className="hidden md:flex flex-col items-center justify-center w-40 shrink-0">
           <div className="w-32 h-32 animate-bounce" style={{ animationDuration: '4s' }}>
             <TransparentImage 
-              src="/src/assets/purple_mascot.jpg" 
+              src={purpleMascot} 
               alt="Purple Mascot" 
               className="w-full h-full object-contain" 
             />

@@ -5,6 +5,8 @@ import CountdownTimer from "../components/CountdownTimer";
 import Loader from "../components/Loader";
 import TransparentImage from "../components/TransparentImage";
 import toast from "react-hot-toast";
+import hourglass from "../assets/hourglass.jpg";
+import raccoonDetective from "../assets/raccoon_detective.jpg";
 import { ArrowLeft, Copy, Check, Download, Flame, EyeOff, FileText, Trash2, RefreshCw } from "lucide-react";
 
 export default function Retrieve({ searchParams, navigate }) {
@@ -294,7 +296,7 @@ export default function Retrieve({ searchParams, navigate }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-slate-50/50 rounded-3xl border border-slate-100 p-4">
             <div className="w-16 h-16 shrink-0 animate-pulse">
               <TransparentImage 
-                src="/src/assets/hourglass.jpg" 
+                src={hourglass} 
                 alt="Hourglass" 
                 className="w-full h-full object-contain" 
               />
@@ -389,7 +391,7 @@ export default function Retrieve({ searchParams, navigate }) {
         {/* Mascot Column */}
         <div className="w-28 h-28 sm:w-36 sm:h-36 shrink-0 animate-pulse">
           <TransparentImage 
-            src="/src/assets/raccoon_detective.jpg" 
+            src={raccoonDetective} 
             alt="VanishShare Raccoon Detective Mascot character searching for secure decryption codes" 
             className="w-full h-full object-contain" 
           />

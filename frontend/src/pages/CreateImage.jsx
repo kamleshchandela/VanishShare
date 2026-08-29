@@ -4,6 +4,7 @@ import CountdownTimer from "../components/CountdownTimer";
 import Loader from "../components/Loader";
 import TransparentImage from "../components/TransparentImage";
 import toast from "react-hot-toast";
+import folderMascot from "../assets/folder_mascot.jpg";
 import { Upload, X, Copy, ArrowLeft, RefreshCw, Flame, Check, AlertCircle } from "lucide-react";
 
 export default function CreateImage({ navigate }) {
@@ -273,7 +274,7 @@ export default function CreateImage({ navigate }) {
         <div className="hidden md:flex flex-col items-center justify-center w-40 shrink-0">
           <div className="w-32 h-32 animate-bounce" style={{ animationDuration: '5s' }}>
             <TransparentImage 
-              src="/src/assets/folder_mascot.jpg" 
+              src={folderMascot} 
               alt="Folder Mascot" 
               className="w-full h-full object-contain" 
             />

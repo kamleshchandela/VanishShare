@@ -2,6 +2,11 @@ import React from "react";
 import { FileText, Image, ArrowRight, ShieldCheck } from "lucide-react";
 import TransparentImage from "../components/TransparentImage";
 
+import purpleMascot from "../assets/purple_mascot.jpg";
+import folderMascot from "../assets/folder_mascot.jpg";
+import notebookMascot from "../assets/notebook_mascot.jpg";
+import pinkPageMascot from "../assets/pink_page_mascot.jpg";
+
 export default function Home({ navigate }) {
   return (
     <div className="max-w-5xl mx-auto px-4 py-2 flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] w-full overflow-hidden select-none">
@@ -10,7 +15,7 @@ export default function Home({ navigate }) {
         {/* Left Mascot (Desktop only) */}
         <div className="hidden md:block w-40 h-40 lg:w-48 lg:h-48 shrink-0 animate-bounce" style={{ animationDuration: '4s' }}>
           <TransparentImage 
-            src="/src/assets/purple_mascot.jpg" 
+            src={purpleMascot} 
             alt="VanishShare Purple Mascot Character representing secure self-destructing text sharing" 
             className="w-full h-full object-contain" 
           />
@@ -33,7 +38,7 @@ export default function Home({ navigate }) {
         {/* Right Mascot (Desktop only) */}
         <div className="hidden md:block w-40 h-40 lg:w-48 lg:h-48 shrink-0 animate-bounce" style={{ animationDuration: '5s' }}>
           <TransparentImage 
-            src="/src/assets/folder_mascot.jpg" 
+            src={folderMascot} 
             alt="VanishShare Yellow Folder Mascot Character representing temporary anonymous image hosting" 
             className="w-full h-full object-contain" 
           />
@@ -61,7 +66,7 @@ export default function Home({ navigate }) {
           </div>
           <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 self-end -mb-4 -mr-2 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
             <TransparentImage 
-              src="/src/assets/notebook_mascot.jpg" 
+              src={notebookMascot} 
               alt="VanishShare Blue Notebook Character representing temporary text sharing" 
               className="w-full h-full object-contain" 
             />
@@ -87,7 +92,7 @@ export default function Home({ navigate }) {
           </div>
           <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 self-end -mb-4 -mr-2 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
             <TransparentImage 
-              src="/src/assets/pink_page_mascot.jpg" 
+              src={pinkPageMascot} 
               alt="VanishShare Pink Page Character representing temporary anonymous image sharing" 
               className="w-full h-full object-contain" 
             />
