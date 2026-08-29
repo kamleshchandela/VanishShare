@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import CreateText from "./pages/CreateText";
 import CreateImage from "./pages/CreateImage";
 import Retrieve from "./pages/Retrieve";
-import { ShieldCheck, Flame, Home as HomeIcon } from "lucide-react";
+import Help from "./pages/Help";
+import { ShieldCheck, Flame, Home as HomeIcon, HelpCircle } from "lucide-react";
 
 export default function App() {
   const [route, setRoute] = useState(window.location.pathname);
@@ -22,21 +23,21 @@ export default function App() {
 
   // Advanced Dynamic SEO: Updates title and meta description tags dynamically for crawl engines
   useEffect(() => {
-    let title = "VanishShare — Self-Destructing Text & Image Sharing in 60 Seconds";
-    let description = "VanishShare is a free, anonymous, and secure service to share text notes or images. Everything self-destructs exactly 60 seconds after creation.";
+    let title = "VanishShare — Self-Destructing Text & Image Sharing in 120 Seconds";
+    let description = "VanishShare is a free, anonymous, and secure service to share text notes or images. Everything self-destructs exactly 120 seconds after creation.";
     
     switch (route) {
       case "/text":
         title = "Share Text Note Securely | VanishShare";
-        description = "Create self-destructing text notes, passwords, and API keys. Safe, anonymous, and purged automatically after 60 seconds.";
+        description = "Create self-destructing text notes, passwords, and API keys. Safe, anonymous, and purged automatically after 120 seconds.";
         break;
       case "/image":
         title = "Share Image Securely | VanishShare";
-        description = "Upload and share temporary images. Fully anonymous hosting that auto-deletes completely after 60 seconds.";
+        description = "Upload and share temporary images. Fully anonymous hosting that auto-deletes completely after 120 seconds.";
         break;
       case "/get":
         title = "Retrieve Shared Secret | VanishShare";
-        description = "Enter your 6-digit code to decrypt and view the self-destructing secure note or image shared with you.";
+        description = "Enter your 4-character code to decrypt and view the self-destructing secure note or image shared with you.";
         break;
       default:
         break;
@@ -64,6 +65,8 @@ export default function App() {
         return <CreateImage navigate={navigate} />;
       case "/get":
         return <Retrieve searchParams={searchParams} navigate={navigate} />;
+      case "/help":
+        return <Help navigate={navigate} />;
       default:
         return <Home navigate={navigate} />;
     }
@@ -105,6 +108,15 @@ export default function App() {
               Home
             </button>
             <button
+              onClick={() => navigate("/help")}
+              className={`hover:text-indigo-600 font-bold transition-colors flex items-center gap-1.5 cursor-pointer ${
+                route === "/help" ? "text-indigo-600" : "text-slate-500"
+              }`}
+            >
+              <HelpCircle size={14} />
+              Help
+            </button>
+            <button
               onClick={() => navigate("/get")}
               className={`px-4 py-2 rounded-xl font-bold transition-all cursor-pointer text-xs sm:text-sm ${
                 route === "/get" 
@@ -123,16 +135,18 @@ export default function App() {
         {renderPage()}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200/60 bg-slate-50/50 py-6 text-center text-xs text-slate-500">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-medium">© {new Date().getFullYear()} VanishShare. Fully Anonymous. No persistent logs.</p>
-          <div className="flex gap-4 font-semibold">
-            <span className="flex items-center gap-1"><ShieldCheck size={14} className="text-emerald-500" /> SSL Encrypted</span>
-            <span className="flex items-center gap-1"><Flame size={14} className="text-orange-500" /> 60s Auto-Expiry</span>
+      {/* Footer (Rendered on all pages EXCEPT Home page) */}
+      {route !== "/" && (
+        <footer className="border-t border-slate-200/60 bg-slate-50/50 py-6 text-center text-xs text-slate-500 z-10">
+          <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-medium">© {new Date().getFullYear()} VanishShare. Fully Anonymous. No persistent logs.</p>
+            <div className="flex gap-4 font-semibold">
+              <span className="flex items-center gap-1"><ShieldCheck size={14} className="text-emerald-500" /> SSL Encrypted</span>
+              <span className="flex items-center gap-1"><Flame size={14} className="text-orange-500" /> 120s Auto-Expiry</span>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      )}
 
       {/* Toast Manager */}
       <Toaster 
