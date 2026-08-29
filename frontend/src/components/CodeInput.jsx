@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 
 export default function CodeInput({ onChange, onComplete }) {
-  const [code, setCode] = useState(Array(6).fill(""));
+  const [code, setCode] = useState(Array(4).fill(""));
   const inputRefs = useRef([]);
 
   useEffect(() => {
@@ -23,12 +23,12 @@ export default function CodeInput({ onChange, onComplete }) {
     const compiledCode = newCode.join("");
     onChange(compiledCode);
 
-    // Auto-focus next field
-    if (cleanVal && index < 5) {
+    // Auto-focus next field (max index is 3 for 4-digit code)
+    if (cleanVal && index < 3) {
       inputRefs.current[index + 1].focus();
     }
 
-    if (compiledCode.length === 6 && onComplete) {
+    if (compiledCode.length === 4 && onComplete) {
       onComplete(compiledCode);
     }
   };
@@ -44,12 +44,12 @@ export default function CodeInput({ onChange, onComplete }) {
     const pastedData = e.clipboardData.getData("text").trim().toUpperCase();
     
     // Filter characters to match custom nanoid alphabet
-    const filteredData = pastedData.replace(/[^A-Z2-9]/g, "").slice(0, 6);
+    const filteredData = pastedData.replace(/[^A-Z2-9]/g, "").slice(0, 4);
     
     if (filteredData.length === 0) return;
 
     const newCode = [...code];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       newCode[i] = filteredData[i] || "";
     }
     setCode(newCode);
@@ -58,10 +58,10 @@ export default function CodeInput({ onChange, onComplete }) {
     onChange(compiledCode);
 
     // Focus last box filled or the next empty box
-    const focusIndex = Math.min(filteredData.length, 5);
+    const focusIndex = Math.min(filteredData.length, 3);
     inputRefs.current[focusIndex].focus();
 
-    if (compiledCode.length === 6 && onComplete) {
+    if (compiledCode.length === 4 && onComplete) {
       onComplete(compiledCode);
     }
   };
