@@ -10,6 +10,34 @@
     font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
+    /* Security: Disable text copying of UI components */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Enable input fields and textareas to receive text input selection */
+  input, textarea {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+  }
+
+  /* Keep decrypted code/text note blocks copyable */
+  .select-all {
+    user-select: all !important;
+    -webkit-user-select: all !important;
+  }
+
+  /* Security: Prevent images from being dragged, right-clicked, or saved */
+  img {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -khtml-user-drag: none !important;
+    -moz-user-drag: none !important;
+    -o-user-drag: none !important;
+    pointer-events: none !important;
   }
 
   /* Custom Scrollbar */
