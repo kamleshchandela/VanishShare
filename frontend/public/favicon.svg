@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#6366f1" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <!-- Rounded squircle container with drop shadow -->
+  <rect x="32" y="32" width="448" height="448" rx="120" fill="url(#logo-grad)" filter="url(#shadow)" />
+  <!-- Stylized 'V' letter combined with a flame -->
+  <path d="M160 160 L232 358 C237 372, 245 380, 256 380 C267 380, 275 372, 280 358 L352 160 C356 148, 346 138, 334 140 C310 144, 290 156, 276 176 L256 205 L236 176 C222 156, 202 144, 178 140 C166 138, 156 148, 160 160 Z" fill="#ffffff" />
+  <!-- Fire/Flame accent inside the center of V -->
+  <path d="M256 245 C256 245, 278 285, 278 315 C278 328, 268 340, 256 340 C244 340, 234 328, 234 315 C234 285, 256 245, 256 245 Z" fill="#fbbf24" />
+</svg>
