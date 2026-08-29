@@ -22,7 +22,7 @@ export default function CreateText({ navigate }) {
 
     while (exists && attempts < 10) {
       code = "";
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 4; i++) {
         code += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
       }
 
@@ -58,7 +58,7 @@ export default function CreateText({ navigate }) {
     setIsExpired(false);
     try {
       const code = await getUniqueCode();
-      const expiresAt = new Date(Date.now() + 60000); // 60s hardcoded expiry
+      const expiresAt = new Date(Date.now() + 120000); // 120s hardcoded expiry
 
       const { error } = await supabase.from("entries").insert([
         {
@@ -246,7 +246,7 @@ export default function CreateText({ navigate }) {
             <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50 border border-amber-200/60 text-xs text-amber-800 font-medium">
               <AlertCircle size={16} className="text-amber-500 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                Once generated, this data is saved directly on Supabase PostgreSQL. It will be completely removed exactly 60 seconds after creation. Anyone with the code can view it before it expires.
+                Once generated, this data is saved directly on Supabase PostgreSQL. It will be completely removed exactly 120 seconds after creation. Anyone with the code can view it before it expires.
               </p>
             </div>
 

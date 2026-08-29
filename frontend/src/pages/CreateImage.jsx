@@ -24,7 +24,7 @@ export default function CreateImage({ navigate }) {
 
     while (exists && attempts < 10) {
       code = "";
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 4; i++) {
         code += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
       }
 
@@ -115,7 +115,7 @@ export default function CreateImage({ navigate }) {
         .from("shares")
         .getPublicUrl(filePath);
 
-      const expiresAt = new Date(Date.now() + 60000); // 60s Expiry
+      const expiresAt = new Date(Date.now() + 120000); // 120s Expiry
 
       // 3. Save entry row on DB
       const { error: dbError } = await supabase.from("entries").insert([
@@ -350,7 +350,7 @@ export default function CreateImage({ navigate }) {
             <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50 border border-amber-200/60 text-xs text-amber-800 font-medium">
               <AlertCircle size={16} className="text-amber-500 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                Once uploaded, the image gets stored directly in your Supabase Storage. Exactly 60 seconds after upload, SQL triggers automatically delete the image from storage when database schedules delete the entry.
+                Once uploaded, the image gets stored directly in your Supabase Storage. Exactly 120 seconds after upload, SQL triggers automatically delete the image from storage when database schedules delete the entry.
               </p>
             </div>
 
