@@ -2,7 +2,8 @@ User-agent: *
 Allow: /
 Allow: /text
 Allow: /image
-Disallow: /get
+Allow: /get
+Allow: /help
 Disallow: /api/
 
 Sitemap: https://vanishshare.io/sitemap.xml

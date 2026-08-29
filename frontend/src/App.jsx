@@ -23,21 +23,25 @@ export default function App() {
 
   // Advanced Dynamic SEO: Updates title and meta description tags dynamically for crawl engines
   useEffect(() => {
-    let title = "VanishShare — Self-Destructing Text & Image Sharing in 120 Seconds";
-    let description = "VanishShare is a free, anonymous, and secure service to share text notes or images. Everything self-destructs exactly 120 seconds after creation.";
+    let title = "VanishShare — Send Secure Self-Destructing Text & Disappearing Images Anonymously";
+    let description = "Send secure self-destructing text notes and share disappearing images anonymously. Perfect for sharing passwords, credentials, API keys, or private pictures. Auto-expiry in 120 seconds.";
     
     switch (route) {
       case "/text":
-        title = "Share Text Note Securely | VanishShare";
-        description = "Create self-destructing text notes, passwords, and API keys. Safe, anonymous, and purged automatically after 120 seconds.";
+        title = "Send Secure Self-Destructing Text Messages & Passwords | VanishShare";
+        description = "Generate a secure disappearing link for secret notes, API keys, and passwords. Safe, anonymous, and purged automatically after 120 seconds.";
         break;
       case "/image":
-        title = "Share Image Securely | VanishShare";
-        description = "Upload and share temporary images. Fully anonymous hosting that auto-deletes completely after 120 seconds.";
+        title = "Share Private Disappearing Images & Temporary Image Hosting | VanishShare";
+        description = "Upload private images to share with a temporary link. Fully anonymous hosting that auto-deletes completely after 120 seconds.";
         break;
       case "/get":
-        title = "Retrieve Shared Secret | VanishShare";
-        description = "Enter your 4-character code to decrypt and view the self-destructing secure note or image shared with you.";
+        title = "Retrieve Disappearing Message or Decrypt Temporary Image | VanishShare";
+        description = "Input your secure 4-character code to decrypt and view the self-destructing secret note or temporary image shared with you.";
+        break;
+      case "/help":
+        title = "How to Send Disappearing Messages & Disappearing Images | VanishShare";
+        description = "Learn how to use VanishShare to create secure disappearing password links or temporary images with 120-second auto-expiry.";
         break;
       default:
         break;
