@@ -97,3 +97,5 @@ export default function Home({ navigate }) {
     </div>
   );
 }
+
+// Optimized card layout metrics for responsive viewport rendering
