@@ -22,8 +22,8 @@ export default function Retrieve({ searchParams, navigate }) {
 
   const fetchEntry = async (lookupCode) => {
     const targetCode = lookupCode || code;
-    if (!targetCode || targetCode.length !== 6) {
-      toast.error("Please enter a valid 6-digit code.");
+    if (!targetCode || targetCode.length !== 4) {
+      toast.error("Please enter a valid 4-digit code.");
       return;
     }
 
@@ -78,7 +78,7 @@ export default function Retrieve({ searchParams, navigate }) {
 
   // Run automatically if code URL search parameter exists (StrictMode safe)
   useEffect(() => {
-    if (queryCode && queryCode.length === 6) {
+    if (queryCode && queryCode.length === 4) {
       if (fetchedRef.current) return;
       fetchedRef.current = true;
       fetchEntry(queryCode);
@@ -400,18 +400,18 @@ export default function Retrieve({ searchParams, navigate }) {
           <div className="space-y-1.5">
             <h1 className="text-2xl font-black text-slate-800">Retrieve Shared Secret</h1>
             <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
-              Enter the 6-character code below to view and decrypt the self-destructing text or image note.
+              Enter the 4-character code below to view and decrypt the self-destructing text or image note.
             </p>
           </div>
 
-          {/* 6 box code inputs */}
+          {/* 4 box code inputs */}
           <div className="flex justify-center md:justify-start">
             <CodeInput onChange={handleCodeChange} onComplete={handleOnComplete} />
           </div>
 
           <button
             onClick={() => fetchEntry()}
-            disabled={code.length !== 6}
+            disabled={code.length !== 4}
             className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/10 cursor-pointer text-sm sm:text-base"
           >
             Decrypt & View Content

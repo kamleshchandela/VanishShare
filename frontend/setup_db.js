@@ -35,7 +35,7 @@ async function setup() {
     await client.query(`
       CREATE TABLE IF NOT EXISTS public.entries (
         id SERIAL PRIMARY KEY,
-        code VARCHAR(6) UNIQUE NOT NULL,
+        code VARCHAR(4) UNIQUE NOT NULL,
         type VARCHAR(10) NOT NULL CHECK (type IN ('text', 'image')),
         content TEXT,
         image_url TEXT,
