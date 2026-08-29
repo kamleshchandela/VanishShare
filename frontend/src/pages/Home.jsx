@@ -26,7 +26,7 @@ export default function Home({ navigate }) {
             VanishShare
           </h1>
           <p className="text-slate-500 text-sm sm:text-base max-w-lg mx-auto leading-relaxed font-bold">
-            Paste text or upload an image, generate a short 6-digit code, and share it. Exactly <span className="text-indigo-600 font-black">60 seconds</span> after creation, it vanishes forever.
+            Paste text or upload an image, generate a short 4-character code, and share it. Exactly <span className="text-indigo-600 font-black">120 seconds</span> after creation, it vanishes forever.
           </p>
         </div>
 
